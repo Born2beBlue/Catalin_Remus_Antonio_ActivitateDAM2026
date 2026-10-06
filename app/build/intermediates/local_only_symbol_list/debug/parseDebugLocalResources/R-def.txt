@@ -1,0 +1,19 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button
+id main
+layout activity_activitate_noua
+layout activity_activitate_rezultat
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string deschide_activitate
+style Base.Theme.Catalin_Remus_Antonio_DAM2026
+style Theme.Catalin_Remus_Antonio_DAM2026
+xml backup_rules
+xml data_extraction_rules

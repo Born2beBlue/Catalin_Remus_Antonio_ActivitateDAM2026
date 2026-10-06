@@ -1,0 +1,8 @@
+com.example.catalin_remus_antonio_dam2026.app-pngs-0 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\build\generated\res\pngs\debug
+com.example.catalin_remus_antonio_dam2026.app-updated_navigation_xml-1 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\build\generated\updated_navigation_xml\debug
+com.example.catalin_remus_antonio_dam2026.app-packageDebugResources-2 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.catalin_remus_antonio_dam2026.app-packageDebugResources-3 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.catalin_remus_antonio_dam2026.app-debug-4 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.catalin_remus_antonio_dam2026.app-debug-5 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\src\debug\res
+com.example.catalin_remus_antonio_dam2026.app-main-6 C:\Users\Remus\AndroidStudioProjects\Catalin_Remus_Antonio_DAM2026\app\src\main\res
+gradleHome-0 C:\Users\Remus\.gradle

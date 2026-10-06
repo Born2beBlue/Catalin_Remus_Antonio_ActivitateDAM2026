@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Catalin_Remus_Antonio_DAM2026</string>
+    <string name="deschide_activitate">DeschideActivitate</string>
+    <style name="Base.Theme.Catalin_Remus_Antonio_DAM2026" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Catalin_Remus_Antonio_DAM2026" parent="Base.Theme.Catalin_Remus_Antonio_DAM2026"/>
+</resources>
