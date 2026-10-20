@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivitateAdaugare">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marc" />
+
+        <EditText
+            android:autofillHints="Nume PC"
+            android:hint="Nume PC"
+            android:id="@+id/et_marca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:inputType="text" />
+
+        <EditText
+            android:autofillHints="Pret"
+            android:id="@+id/et_pret"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pret_lei"
+            android:minHeight="48dp"
+            android:inputType="numberDecimal" />
+
+        <CheckBox
+            android:id="@+id/cb_ssd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/are_ssd" />
+
+        <RadioGroup
+            android:id="@+id/rg_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_laptop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/laptop" />
+
+            <RadioButton
+                android:id="@+id/rb_desktop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/desktop" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/sp_os"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            />
+
+        <RatingBar
+            android:id="@+id/rb_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+        <Switch
+            android:autofillHints="RTX 2060 Super"
+            android:id="@+id/sw_placa_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/GPU" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="salveaza"
+            android:text="@string/salveaza" />
+    </LinearLayout>
+</ScrollView>

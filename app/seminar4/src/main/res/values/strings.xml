@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">seminar4</string>
+    <string name="marc">Marcă</string>
+    <string name="pret">Preț (lei)</string>
+    <string name="are_ssd">Are SSD</string>
+    <string name="laptop">Laptop</string>
+    <string name="desktop">Desktop</string>
+    <string name="GPU">Placă video dedicată</string>
+    <string name="salveaza">Salvează</string>
+    <string name="adaug_computer">Adaugă computer (Design AI)</string>
+    <string name="niciun_computer_ad_ugat_nc">Niciun computer adăugat încă.</string>
+    <string name="adauga_computer">Adaugă computer</string>
+    <string name="pret_lei">Preț (lei)</string>
+</resources>
