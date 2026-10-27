@@ -20,6 +20,12 @@
         android:onClick="deschideAdaugareAI"
         android:text="@string/adaug_computer" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deschideLista"
+        android:text="@string/afiseaza_lista" />
+
     <TextView
         android:id="@+id/tv_rezultat"
         android:layout_width="match_parent"
@@ -27,4 +33,6 @@
         android:layout_marginTop="16dp"
         android:text="@string/niciun_computer_ad_ugat_nc"
         android:textSize="16sp" />
+
+
 </LinearLayout>

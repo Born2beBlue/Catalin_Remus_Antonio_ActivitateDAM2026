@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".ActivitateAdaugare" android:exported="false" />
         <activity android:name=".ActivitateAdaugareAI" android:exported="false" />
+        <activity android:name=".ActivitateLista" android:exported="false" />
     </application>
 
 </manifest>

@@ -15,16 +15,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/marc" />
+            android:text="@string/marc"
+            android:autofillHints="Nume PC"
+            />
 
         <EditText
-            android:autofillHints="Nume PC"
-            android:hint="Nume PC"
             android:id="@+id/et_marca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:inputType="text" />
+            android:autofillHints="Nume PC"
+            android:inputType="text"
+            android:minHeight="48dp" />
 
         <EditText
             android:autofillHints="Pret"
