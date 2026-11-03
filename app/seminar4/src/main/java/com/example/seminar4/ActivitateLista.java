@@ -14,10 +14,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActivitateLista extends AppCompatActivity {
-    private ArrayList<Computer> lista;
-    private ArrayAdapter<Computer> adapter;
+    //Seminaru 5
+    //private ArrayList<Computer> lista;
+    //private ArrayAdapter<Computer> adapter;
+
+    //Seminaru 6
+    private List<Computer> lista = null;
+    private int idModificat = 0;
+    private ComputerAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +42,20 @@ public class ActivitateLista extends AppCompatActivity {
 
         ListView lv = findViewById(R.id.lv_computere);
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
+       //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
+        //lv.setAdapter(adapter);
+        adapter = new ComputerAdapter(lista, getApplicationContext(), R.layout.row_computer);
         lv.setAdapter(adapter);
 
+        //lv.setOnItemClickListener((parent, view, position, id) ->
+                //Toast.makeText(this, lista.get(position).toString(), Toast.LENGTH_LONG).show());
 
-        lv.setOnItemClickListener((parent, view, position, id) ->
-                Toast.makeText(this, lista.get(position).toString(), Toast.LENGTH_LONG).show());
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Intent it = new Intent(getApplicationContext(), ActivitateAdaugare.class);
+            it.putExtra("computer", lista.get(position));
+            idModificat = position;
+            startActivityForResult(it, 209);
+        });
 
         lv.setOnItemLongClickListener((parent, view, position, id) -> {
             lista.remove(position);
@@ -54,7 +69,7 @@ public class ActivitateLista extends AppCompatActivity {
 
     private void trimiteRezultat() {
         Intent it = new Intent();
-        it.putParcelableArrayListExtra("lista", lista);
+        it.putParcelableArrayListExtra("lista", new ArrayList<>(lista));
         setResult(RESULT_OK, it);
     }
 
@@ -62,5 +77,18 @@ public class ActivitateLista extends AppCompatActivity {
     public void finish() {
         trimiteRezultat();
         super.finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 209 && resultCode == RESULT_OK && data != null && idModificat >= 0 && idModificat < lista.size()) {
+            Computer modificat = IntentCompat.getParcelableExtra(data, "computer", Computer.class);
+            if (modificat != null) {
+                lista.set(idModificat, modificat);
+                adapter.notifyDataSetChanged();
+                trimiteRezultat();
+            }
+        }
     }
 }

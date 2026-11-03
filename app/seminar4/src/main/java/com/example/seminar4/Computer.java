@@ -58,4 +58,12 @@ public class Computer implements Parcelable {
                 + "\nRating: " + rating
                 + "\nPlacă video dedicată: " + (placaVideoDedicata ? "da" : "nu");
     }
+
+    public String getMarca() { return marca; }
+    public double getPret() { return pret; }
+    public boolean isAreSsd() { return areSsd; }
+    public String getTip() { return tip; }
+    public String getSistemOperare() { return sistemOperare; }
+    public float getRating() { return rating; }
+    public boolean isPlacaVideoDedicata() { return placaVideoDedicata; }
 }
