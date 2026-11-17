@@ -26,6 +26,12 @@
         android:onClick="deschideLista"
         android:text="@string/afiseaza_lista" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="deschideListaImagini"
+        android:text="@string/imagini" />
+
     <TextView
         android:id="@+id/tv_rezultat"
         android:layout_width="match_parent"

@@ -19,8 +19,11 @@ public class MainActivity_S4 extends AppCompatActivity {
     private static final int COD_ADAUGARE = 100;
     private static final int COD_LISTA = 101;
 
+    private static final int COD_LISTA_IMAGINI = 102;
+
     private TextView tvRezultat;
     private ArrayList<Computer> listaComputere = new ArrayList<>();
+    private ArrayList<ImaginiDomeniu> listaImagini = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,12 @@ public class MainActivity_S4 extends AppCompatActivity {
         startActivityForResult(it, COD_LISTA);
     }
 
+    public void deschideListaImagini(View view){
+        Intent it = new Intent(this, ActivitateListaImagini.class);
+        it.putParcelableArrayListExtra("imagini", listaImagini);
+        startActivityForResult(it, COD_LISTA_IMAGINI);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -65,6 +74,13 @@ public class MainActivity_S4 extends AppCompatActivity {
                     IntentCompat.getParcelableArrayListExtra(data, "lista", Computer.class);
             if (modificata != null) {
                 listaComputere = modificata;
+            }
+        }
+        else if (requestCode == COD_LISTA_IMAGINI) {
+            ArrayList<ImaginiDomeniu> modificata =
+                    IntentCompat.getParcelableArrayListExtra(data, "imagini", ImaginiDomeniu.class);
+            if (modificata != null) {
+                listaImagini = modificata;
             }
         }
         tvRezultat.setText("Computere în listă: " + listaComputere.size());

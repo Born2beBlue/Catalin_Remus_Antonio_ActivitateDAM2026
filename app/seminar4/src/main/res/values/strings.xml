@@ -12,4 +12,6 @@
     <string name="adauga_computer">Adaugă computer</string>
     <string name="pret_lei">Preț (lei)</string>
     <string name="afiseaza_lista">Afiseaza lista</string>
+    <string name="imagini">Imagini</string>
+    <string name="uncalculatorrandom">UnCalculatorRandom</string>
 </resources>
