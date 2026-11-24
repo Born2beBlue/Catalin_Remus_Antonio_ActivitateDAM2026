@@ -1,0 +1,105 @@
+package com.example.seminar4;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.IntentCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
+public class ActivitateLista extends AppCompatActivity {
+    //Seminaru 5
+    //private ArrayList<Computer> lista;
+    //private ArrayAdapter<Computer> adapter;
+
+    //Seminaru 6
+    private List<Computer> lista = null;
+    private int idModificat = 0;
+    private ComputerAdapter adapter = null;
+
+    List<String> linkuriImagini = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_lista);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets s = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(s.left, s.top, s.right, s.bottom);
+            return insets;
+        });
+
+        lista = IntentCompat.getParcelableArrayListExtra(getIntent(), "lista", Computer.class);
+        if (lista == null) lista = new ArrayList<>();
+
+        ListView lv = findViewById(R.id.lv_computere);
+
+       //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
+        //lv.setAdapter(adapter);
+        adapter = new ComputerAdapter(lista, getApplicationContext(), R.layout.row_computer);
+        lv.setAdapter(adapter);
+
+        //lv.setOnItemClickListener((parent, view, position, id) ->
+                //Toast.makeText(this, lista.get(position).toString(), Toast.LENGTH_LONG).show());
+
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Intent it = new Intent(getApplicationContext(), ActivitateAdaugare.class);
+            it.putExtra("computer", lista.get(position));
+            idModificat = position;
+            startActivityForResult(it, 209);
+        });
+
+        lv.setOnItemLongClickListener((parent, view, position, id) -> {
+            lista.remove(position);
+            adapter.notifyDataSetChanged();
+            Toast.makeText(this, "Computer șters", Toast.LENGTH_SHORT).show();
+            return true;
+        });
+
+        trimiteRezultat();
+    }
+
+    private void trimiteRezultat() {
+        Intent it = new Intent();
+        it.putParcelableArrayListExtra("lista", new ArrayList<>(lista));
+        setResult(RESULT_OK, it);
+    }
+
+    @Override
+    public void finish() {
+        trimiteRezultat();
+        super.finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 209 && resultCode == RESULT_OK && data != null && idModificat >= 0 && idModificat < lista.size()) {
+            Computer modificat = IntentCompat.getParcelableExtra(data, "computer", Computer.class);
+            if (modificat != null) {
+                lista.set(idModificat, modificat);
+                adapter.notifyDataSetChanged();
+                trimiteRezultat();
+            }
+        }
+    }
+}

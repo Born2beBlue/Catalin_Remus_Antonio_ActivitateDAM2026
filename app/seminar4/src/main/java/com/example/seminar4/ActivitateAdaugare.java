@@ -16,6 +16,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.seminar4_8.R;
+
 public class ActivitateAdaugare extends AppCompatActivity {
 
     protected int getLayoutId() {

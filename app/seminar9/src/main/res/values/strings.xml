@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">seminar5</string>
+    <string name="vreme_oras">Vreme Oras</string>
+    <string name="vremea">Vremea</string>
+    <string name="nume_oras">Nume oras</string>
+    <string name="cauta_vremea">Cauta vremea</string>
+    <string-array name="zile_optiuni">
+        <item>1 zi</item>
+        <item>5 zile</item>
+    </string-array>
+</resources>
